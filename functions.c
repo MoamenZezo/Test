@@ -52,5 +52,5 @@ char *spec(char *str, char *target)
 		}
 		token = strtok(NULL, " ");
 	}
-	return ("Nothing !!");
+	return ("not");
 }
