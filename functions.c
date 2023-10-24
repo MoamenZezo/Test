@@ -1,8 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 int _strlen(char *str)
 {
@@ -14,8 +10,7 @@ int _strlen(char *str)
 	for (i = 0; str[i]; i++)
 		;
 
-	str[i] = '\0';
-	return (0);
+	return (i);
 }
 
 int _strcmp(char *str1, char *str2)
@@ -42,22 +37,20 @@ int _strcmp(char *str1, char *str2)
 	}
 }
 
-char *spec(char *str)
+char *spec(char *str, char *target)
 {
-	char *buffer = malloc(sizeof(char) * 4096);
+	char buffer[1024];
 
 	strcpy(buffer, str);
-
 	char *token = strtok(buffer, " ");
 	
 	while(token != NULL)
 	{
-		if(_strcmp(token, "moamen") == 0)
+		if(_strcmp(token, target) == 0)
 		{
 			return (token);
 		}
 		token = strtok(NULL, " ");
 	}
-	free (buffer);
-	return (NULL);
+	return ("Nothing !!");
 }
