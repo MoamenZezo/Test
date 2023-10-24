@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	printf("Hello from ***master*** branch\n");
+	printf("Hello from merged branch\n");
 	return (0);
 }
